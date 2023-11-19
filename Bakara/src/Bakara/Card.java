@@ -33,19 +33,6 @@ public class Card {
 	private Pattern pattern;
 	
 	public Card() {
-		
-		// 카드를 중간에 뽑고 확인하고 하는 과정은 linkedlist가 적합.
-		List<Card> cards = new LinkedList<Card>();
-		
-		// Card Pattern 확인
-		for (Pattern pattern : Card.Pattern.values()) {
-			System.out.println(pattern);
-		}
-		System.out.println();
-		// Card Num 확인
-		for (Num num : Card.Num.values()) {
-			System.out.println(num);
-		}
 	}
 	public Card(Num num, Pattern pattern) {
 		super();
@@ -96,6 +83,10 @@ public class Card {
 		private Num(String mark, int point) {
 			this.mark = mark;
 			this.point = point;
+		}
+		
+		public int getPoint() {
+			return this.point;
 		}
 	}
 	  
