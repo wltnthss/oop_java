@@ -55,7 +55,7 @@ public class Card {
 
 	@Override
 	public String toString() {
-		return "num=" + num + ", pattern=" + pattern;
+		return "num=" + num.mark + ", pattern=" + pattern;
 	}
 
 	public enum Num{
