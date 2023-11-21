@@ -44,6 +44,7 @@ public class Gamer {
 	public void playGame() {
 		System.out.println("===== 게임 시작 =====");
 		
+		// 잔고가 0이하면 게임 시작 불가.
 		if(this.balance <= 0) {
 			System.out.println("잔고충전을 먼저 진행해주세요.");
 			return;
