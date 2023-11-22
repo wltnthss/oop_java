@@ -8,6 +8,6 @@ public class BakaraPlay {
 		Dealer dealer = new Dealer();
 		CardDeck cardDeck = new CardDeck();
 		Gamer gamer = new Gamer("고수");
-		
+		gamer.goList();
 	}
 }

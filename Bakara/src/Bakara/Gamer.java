@@ -4,24 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.junit.jupiter.api.condition.DisabledIfSystemProperties;
+
 public class Gamer {
 
 	Scanner sc = new Scanner(System.in);
 	private List<Card> cards;
-	private int money;
 	private int balance;
-	private boolean turn;
+	private int money;
 	private String name;
+	private int betPlayer;
+	private int betBanker;
 	
 	public Gamer(String name) {
 		this.cards = new ArrayList(); 
 		this.name = name;
-		gamerList();
 	}
 	
 	// Gamer 의 리스트 생성
 	// 1. 충전로직, 잔고확인, 게임시작, 게임종료
-	public void gamerList() {
+	public void goList() {
 		System.out.println(this.name + "님이 입장하셨습니다.");
 		while(true) {
 			System.out.println("===== 메인화면 =====");
@@ -49,7 +51,48 @@ public class Gamer {
 			System.out.println("잔고충전을 먼저 진행해주세요.");
 			return;
 		}
+		betting();
 	}
+	
+	// 배팅
+	public void betting() {
+		System.out.println("===== 배팅 해주세요 =====");
+		System.out.println("=== 1. Player ===");
+		System.out.println("=== 2. Banker ===");
+		System.out.println("=== 3. Tie ===");
+		System.out.println("=================");
+		
+		boolean flag = true;
+		
+		while(flag) {
+			
+			System.out.print("배팅할 지역 : ");
+			int num = sc.nextInt();
+			
+			if(!(num == 1 || num == 2 || num == 3)) {
+				System.out.println("1, 2, 3 중에 입력해주세요.");
+				System.out.println("=== 1. Player ===");
+				System.out.println("=== 2. Banker ===");
+				System.out.println("=== 3. Tie ===");
+			}else {
+				flag = false;
+			}
+			
+		}
+		
+	}
+	
+	public void showInfo() {
+		StringBuilder sb = new StringBuilder();
+		
+		for (Card card : cards) {
+			sb.append(card.toString());
+			sb.append("\n");
+		}
+		
+		System.out.println(sb.toString());
+	}
+	
 	
 	// 잔고확인
 	public void showMoney() {
@@ -66,4 +109,25 @@ public class Gamer {
 		System.out.println("현재 금액은 총 : " + balance + " 입니다.");
 		return balance;
 	}
+
+	public int getBetPlayer() {
+		return betPlayer;
+	}
+
+	public void setBetPlayer(int betPlayer) {
+		this.betPlayer = betPlayer;
+	}
+
+	public int getBetBanker() {
+		return betBanker;
+	}
+
+	public void setBetBanker(int betBanker) {
+		this.betBanker = betBanker;
+	}
+
+	public int getBalance() {
+		return balance;
+	}
 }
+
