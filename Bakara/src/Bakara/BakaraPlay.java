@@ -5,11 +5,11 @@ public class BakaraPlay {
 	public void play() {
 		System.out.println("===== Bakara Play =====");
 		
-		boolean isContinue = false;
+ 		boolean isContinue = false;
 		
 		do {
 			Dealer dealer = new Dealer();
-			Gamer gamer = new Gamer("고수");
+			Gamer gamer = new Gamer();
 			
 			// 딜러가 게임을 중재합니다.
 			dealer.gameFlowing();

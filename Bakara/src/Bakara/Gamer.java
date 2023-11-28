@@ -20,9 +20,8 @@ public class Gamer {
 	private int betPlayer;
 	private int betBanker;
 	
-	public Gamer(String name) {
+	public Gamer() {
 		this.cards = new ArrayList(); 
-		this.name = name;
 		this.balance = INIT_GAMER_MONEY;
 	}
 	
