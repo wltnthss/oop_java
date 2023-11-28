@@ -36,18 +36,8 @@ public class Dealer {
 		// 배팅 로직 구현
 		bet.bettingStart();
 		
-		// 베팅 시작 10초 후 마감
-		try {
-			System.out.println("===== 10초후 베팅이 마감됩니다 =====");
-			for (int i = 10; i >= 0; i--) {
-				Thread.sleep(1000);
-				System.out.println(i);
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
 		System.out.println("===== 베팅을 종료합니다 =====");
+		System.out.println();
 		
 		// 딜러 카드덱에서 카드 뽑기 
 		cardDraw();
@@ -56,6 +46,7 @@ public class Dealer {
 	
 	// 딜러가 카드를 받고 player -> banker 순으로 각각 2장씩 지급
 	public void cardDraw() {
+		System.out.println("===== 딜러가 카드를 오픈합니다 =====");
 		System.out.println("===== player 1번째 카드 =====");
 		secondDelay();
 		playerCards.add(cardDeck.draw());
