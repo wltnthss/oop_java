@@ -45,6 +45,7 @@ public class Betting {
 		System.out.println("===== 2. Banker =====");
 		System.out.println("===== 3. Tie =====");
 		System.out.println("===========================");
+		System.out.print(">>> ");
 		int num = sc.nextInt();
 		
 		return num;

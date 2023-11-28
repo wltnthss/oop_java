@@ -51,16 +51,19 @@ public class Dealer {
 		secondDelay();
 		playerCards.add(cardDeck.draw());
 		System.out.println("[ player 1번째 카드 : " + playerCards.get(0) + "]");
+		secondDelay();
 		
 		System.out.println("===== banker 1번째 카드 =====");
 		secondDelay();
 		BankerCards.add(cardDeck.draw());
 		System.out.println("[ banker 1번째 카드 : " + BankerCards.get(0) + "]");
+		secondDelay();
 		
 		System.out.println("===== player 2번째 카드 =====");
 		secondDelay();
 		playerCards.add(cardDeck.draw());
 		System.out.println("[ player 2번째 카드 : " + playerCards.get(1) + "]");
+		secondDelay();
 		
 		System.out.println("===== banker 2번째 카드 =====");
 		secondDelay();
