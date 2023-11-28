@@ -13,33 +13,27 @@ public class Gamer {
 	// 초기 자금 변경
 	private final int INIT_GAMER_MONEY = 5000;
 	
-	private List<Card> cards;
 	private int balance;
 	private int money;
 	private String name;
 	private int betPlayer;
 	private int betBanker;
 	
-	public Gamer() {
-		this.cards = new ArrayList(); 
+	private static Gamer gamer;
+	
+	private Gamer() {
 		this.balance = INIT_GAMER_MONEY;
 	}
 	
-	public void showInfo() {
-		StringBuilder sb = new StringBuilder();
-		
-		for (Card card : cards) {
-			sb.append(card.toString());
-			sb.append("\n");
+	// 유저 싱글턴으로 구현
+	public static Gamer getInstance() {
+		if(gamer == null) {
+			gamer = new Gamer();
 		}
-		
-		System.out.println(sb.toString());
+		return gamer;
 	}
 
-	public List<Card> getCards() {
-		return cards;
-	}
-
+	
 	public int getBalance() {
 		return balance;
 	}

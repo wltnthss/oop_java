@@ -9,7 +9,7 @@ public class BakaraPlay {
 		
 		do {
 			Dealer dealer = new Dealer();
-			Gamer gamer = new Gamer();
+			Gamer gamer = Gamer.getInstance();
 			
 			// 딜러가 게임을 중재합니다.
 			dealer.gameFlowing();
